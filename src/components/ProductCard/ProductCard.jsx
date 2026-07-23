@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
+import { useContext } from 'react'
+import { CartContext } from '../../context/CartContext'
 
 function ProductCard({ product, isFavorite, onToggleFavorite }) {
+  const { addToCart } = useContext(CartContext)
+
   return (
     <div className="product-card">
       <Link to={`/product/${product.id}`} className="product-image-link">
-        <img 
-          src={product.image} 
-          alt={product.name} 
-          className="product-img-file" 
-        />
+        <div className={`product-image swatch-${product.category.toLowerCase()}`}></div>
       </Link>
 
       <button
@@ -25,6 +25,7 @@ function ProductCard({ product, isFavorite, onToggleFavorite }) {
           <h3>{product.name}</h3>
         </Link>
         <p className="product-price">${product.price}</p>
+        <button className="add-to-cart-btn" onClick={() => addToCart(product.id)}>Add to cart</button>
       </div>
     </div>
   )

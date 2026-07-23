@@ -7,9 +7,12 @@ function About() {
       </section>
 
       <section className="about-content">
-        <h2>Our approach</h2>
-        <p>Lunara started with a simple frustration: most home decor felt either disposable or unaffordable. We wanted something in between, pieces made from real materials, designed to be lived with for years, not seasons.</p>
-        <p>Every product in our collection is chosen for how it actually feels in a home, not just how it photographs.</p>
+        <img src="/about.jpg" alt="Lunara studio workspace" className="about-image" />
+        <div>
+          <h2>Our approach</h2>
+          <p>Lunara started with a simple frustration: most home decor felt either disposable or unaffordable. We wanted something in between, pieces made from real materials, designed to be lived with for years, not seasons.</p>
+          <p>Every product in our collection is chosen for how it actually feels in a home, not just how it photographs.</p>
+        </div>
       </section>
     </div>
   )
