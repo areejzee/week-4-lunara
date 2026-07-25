@@ -12,7 +12,7 @@ export function ProductProvider({ children }) {
   })
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/products')
+    fetch('https://week-4-lunara-9jq4.vercel.app/api/products')
       .then((res) => {
         if (!res.ok) throw new Error('Request failed')
         return res.json()
