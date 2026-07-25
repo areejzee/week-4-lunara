@@ -7,8 +7,13 @@ function ProductCard({ product, isFavorite, onToggleFavorite }) {
 
   return (
     <div className="product-card">
+
       <Link to={`/product/${product.id}`} className="product-image-link">
-        <div className={`product-image swatch-${product.category.toLowerCase()}`}></div>
+        <img
+          src={product.image}
+          alt={product.name}
+          className="product-image"
+        />
       </Link>
 
       <button
@@ -21,12 +26,21 @@ function ProductCard({ product, isFavorite, onToggleFavorite }) {
 
       <div className="product-info">
         <span className="product-category">{product.category}</span>
+
         <Link to={`/product/${product.id}`}>
           <h3>{product.name}</h3>
         </Link>
+
         <p className="product-price">${product.price}</p>
-        <button className="add-to-cart-btn" onClick={() => addToCart(product.id)}>Add to cart</button>
+
+        <button
+          className="add-to-cart-btn"
+          onClick={() => addToCart(product.id)}
+        >
+          Add to cart
+        </button>
       </div>
+
     </div>
   )
 }
